@@ -35,9 +35,9 @@ exports.up = function (knex) {
       tbl.string("notes", 255);
       tbl.boolean("completed").notNullable().defaultTo(0);
       tbl
-        .integer("recipe_id")
+        .integer("project_id")
         .unsigned()
-        .references("recipes.id")
+        .references("projects.id")
         .onDelete("RESTRICT") // RESTRICT, CASCADE, SET NULL, DO NOTHING
         .onUpdate("CASCADE");
     });
